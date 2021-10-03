@@ -56,4 +56,8 @@ public class GameProcess {
             getScoreForLines(doneLineCount);
         }
     }
+
+    public void deleteLines(){
+
+    }
 }

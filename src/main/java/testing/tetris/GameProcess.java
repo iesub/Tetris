@@ -227,7 +227,6 @@ public class GameProcess {
     }
 
     public void fallingProcess() {
-        boolean cycleBreakdown = false;
         while (true) {
             if (checkCanMoveDown()){
                 moveDownFigure();
@@ -236,5 +235,13 @@ public class GameProcess {
              break;
             }
         }
+    }
+
+    public void moveFigureLeft(){
+
+    }
+
+    public void moveFigureRight(){
+
     }
 }

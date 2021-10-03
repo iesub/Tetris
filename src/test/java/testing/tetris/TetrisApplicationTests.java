@@ -1,11 +1,17 @@
 package testing.tetris;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TetrisApplicationTests extends Assertions {
 
-	GameProcess gameProcess = new GameProcess();
+	GameProcess gameProcess;
+
+	@BeforeEach
+	void createGameProcess(){
+		gameProcess = new GameProcess();
+	}
 
 	@Test
 	void checkLinesTest() {
@@ -36,6 +42,9 @@ class TetrisApplicationTests extends Assertions {
 		assertEquals(1600, gameProcess.getScore());
 	}
 
-
+	@Test
+	void deleteLinesCheck(){
+		
+	}
 
 }

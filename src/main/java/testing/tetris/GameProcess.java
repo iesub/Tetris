@@ -96,4 +96,13 @@ public class GameProcess {
             dropTheLines(strikeBeginning, fullLinesCount);
         }
     }
+
+    public boolean buildFigure(){
+
+        return true;
+    }
+
+    public void dropDown(){
+
+    }
 }

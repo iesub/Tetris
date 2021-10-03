@@ -58,9 +58,9 @@ class TetrisApplicationTests extends Assertions {
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 				{1, 1, 1, 0, 0, 1, 1, 0, 1, 1},
 				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -90,7 +90,7 @@ class TetrisApplicationTests extends Assertions {
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{1, 1, 1, 0, 0, 1, 1, 0, 1, 1}
 		};
-		assertEquals(gameFieldUpdated, gameProcess.getGameField());
+		assertArrayEquals(gameFieldUpdated, gameProcess.getGameField());
 	}
 
 }

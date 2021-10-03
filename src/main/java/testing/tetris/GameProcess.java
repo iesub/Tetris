@@ -35,18 +35,20 @@ public class GameProcess {
         }
     }
 
+    public boolean lineIsFull(int i){
+        for (int j = 0; j < 10; j++ ){
+            if (gameField[i][j] != 1){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void checkForDoneLines(){
         int doneLineCount = 0;
-        int blockCount = 0;
         for (int i = 0; i < 20; i++){
-            for (int j = 0; j < 10; j++){
-                if (gameField[i][j] == 1){
-                    blockCount++;
-                }
-            }
-            if (blockCount == 10){
+            if (lineIsFull(i)){
                 doneLineCount++;
-                blockCount = 0;
             } else {
                 getScoreForLines(doneLineCount);
                 doneLineCount = 0;
@@ -57,7 +59,41 @@ public class GameProcess {
         }
     }
 
-    public void deleteLines(){
+    public void fillWithEmptyLine(int i){
+            gameField[i] = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    }
 
+    public void dropTheLines(int i, int step){
+        for (int j = i; j >= 0; j--){
+            gameField[j+step] = gameField[j];
+        }
+        for (int j = 0; j < step; j++){
+            fillWithEmptyLine(j);
+        }
+    }
+
+    public void deleteLines(){
+        int fullLinesCount = 0;
+        boolean fullLineStrike = false;
+        int strikeBeginning = -1;
+        for (int i = 0; i < 20; i ++){
+            if (lineIsFull(i)){
+                if (i-1 >= 0 && strikeBeginning == -1) {
+                    strikeBeginning = i - 1;
+                }
+                fullLinesCount++;
+                fullLineStrike = true;
+            } else {
+                fullLineStrike = false;
+            }
+            if (!fullLineStrike && fullLinesCount != 0){
+                dropTheLines(strikeBeginning, fullLinesCount);
+                fullLinesCount = 0;
+                strikeBeginning = -1;
+            }
+        }
+        if (fullLinesCount != 0){
+            dropTheLines(strikeBeginning, fullLinesCount);
+        }
     }
 }

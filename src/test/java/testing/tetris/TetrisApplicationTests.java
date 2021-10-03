@@ -118,7 +118,17 @@ class TetrisApplicationTests extends Assertions {
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 		};
 		gameProcess.setGameField(gameField);
-		gameProcess.
+		gameProcess.buildFigure(FigureType.FIGURE_TYPE_O);
+		gameProcess.fallingProcess();
+		gameProcess.setGameField(gameField);
+		gameProcess.buildFigure(FigureType.FIGURE_TYPE_I);
+		gameProcess.fallingProcess();
+		gameProcess.setGameField(gameField);
+		gameProcess.buildFigure(FigureType.FIGURE_TYPE_T);
+		gameProcess.fallingProcess();
+		gameProcess.setGameField(gameField);
+		gameProcess.buildFigure(FigureType.FIGURE_TYPE_J);
+		gameProcess.fallingProcess();
 		int[][] gameFieldUpdated = {
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -133,9 +143,9 @@ class TetrisApplicationTests extends Assertions {
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
-				{0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-				{0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
+				{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+				{0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+				{0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
 				{0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
 				{0, 0, 0, 1, 1, 1, 1, 0, 0, 0},
 				{0, 0, 0, 0, 1, 1, 0, 0, 0, 0},

@@ -184,14 +184,17 @@ class TetrisApplicationTests extends Assertions {
 		gameProcess.moveDownFigure();
 		gameProcess.moveDownFigure();
 		gameProcess.moveFigureLeft();
+		gameProcess.moveFigureLeft();
+		gameProcess.moveFigureLeft();
+		gameProcess.moveFigureLeft();
 		int[][] gameFieldUpdated = {
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+				{2, 2, 2, 2, 0, 0, 0, 0, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -206,6 +209,7 @@ class TetrisApplicationTests extends Assertions {
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 		};
+		assertArrayEquals(gameFieldUpdated, gameProcess.getGameField());
 
 		gameField = new int[][]{
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -235,11 +239,14 @@ class TetrisApplicationTests extends Assertions {
 		gameProcess.moveDownFigure();
 		gameProcess.moveDownFigure();
 		gameProcess.moveFigureRight();
+		gameProcess.moveFigureRight();
+		gameProcess.moveFigureRight();
+		gameProcess.moveFigureRight();
 		gameFieldUpdated = new int[][]{
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 1, 1, 1, 1, 0, 0, 0},
+				{0, 0, 0, 0, 0, 0, 2, 2, 2, 2},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},

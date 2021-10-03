@@ -244,7 +244,7 @@ public class GameProcess {
                     if (j - 1 < 0) {
                         return false;
                     }
-                    if (j - 1 < 0 && gameField[i][j-1] == 1) {
+                    if (j - 1 >= 0 && gameField[i][j-1] == 1) {
                         return false;
                     }
                 }
@@ -266,7 +266,34 @@ public class GameProcess {
         }
     }
 
-    public void moveFigureRight(){
-
+    public boolean checkCanMoveRight() {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (gameField[i][j] == 2) {
+                    if (j + 1 > 9) {
+                        return false;
+                    }
+                    if (j + 1 <= 9 && gameField[i][j+1] == 1) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
+
+    public void moveFigureRight(){
+        if (checkCanMoveRight()) {
+            for (int i = 19; i >= 0; i--) {
+                for (int j = 9; j >= 0; j--) {
+                    if (gameField[i][j] == 2) {
+                        gameField[i][j + 1] = 2;
+                        gameField[i][j] = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    
 }

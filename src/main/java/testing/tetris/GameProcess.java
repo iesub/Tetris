@@ -3,6 +3,8 @@ package testing.tetris;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Random;
+
 @Setter
 @Getter
 public class GameProcess {
@@ -18,6 +20,8 @@ public class GameProcess {
     int[] fourthCubeCoord = new int[]{0, 0};
 
     int turnCount = 0;
+    boolean figureFreezed;
+    boolean gameOver = false;
 
     public void initField(){
         for (int i = 0; i < 20; i++){
@@ -110,102 +114,81 @@ public class GameProcess {
         currentFigure = figureType;
         switch (figureType){
             case FIGURE_TYPE_I:
-                if (gameField[0][3] != 1) {
+                if (gameField[0][3] != 1 &&
+                        gameField[0][4] != 1 &&
+                        gameField[0][5] != 1 &&
+                        gameField[0][6] != 1) {
                     gameField[0][3] = 2;
-                }
-                if (gameField[0][4] != 1) {
                     gameField[0][4] = 2;
-                }
-                if (gameField[0][5] != 1) {
                     gameField[0][5] = 2;
-                }
-                if (gameField[0][6] != 1) {
                     gameField[0][6] = 2;
-                }
+                } else {gameOver = true;}
                 break;
             case FIGURE_TYPE_J:
-                if (gameField[1][3] != 1) {
+                if (gameField[1][3] != 1 &&
+                        gameField[1][4] != 1 &&
+                        gameField[1][5] != 1 &&
+                        gameField[0][3] != 1) {
                     gameField[1][3] = 2;
-                }
-                if (gameField[1][4] != 1) {
                     gameField[1][4] = 2;
-                }
-                if (gameField[1][5] != 1) {
                     gameField[1][5] = 2;
-                }
-                if (gameField[0][3] != 1) {
                     gameField[0][3] = 2;
-                }
+                } else {gameOver = true;}
                 break;
             case FIGURE_TYPE_L:
-                if (gameField[1][3] != 1) {
+                if (gameField[1][3] != 1 &&
+                        gameField[1][4] != 1 &&
+                        gameField[1][5] != 1 &&
+                        gameField[0][5] != 1) {
                     gameField[1][3] = 2;
-                }
-                if (gameField[1][4] != 1) {
                     gameField[1][4] = 2;
-                }
-                if (gameField[1][5] != 1) {
                     gameField[1][5] = 2;
-                }
-                if (gameField[0][5] != 1) {
                     gameField[0][5] = 2;
-                }
+                } else {gameOver = true;}
                 break;
             case FIGURE_TYPE_O:
-                if (gameField[1][4] != 1) {
+                if (gameField[1][4] != 1 &&
+                        gameField[0][4] != 1 &&
+                        gameField[0][5] != 1 &&
+                        gameField[1][5] != 1) {
                     gameField[1][4] = 2;
-                }
-                if (gameField[0][4] != 1) {
                     gameField[0][4] = 2;
-                }
-                if (gameField[0][5] != 1) {
                     gameField[0][5] = 2;
-                }
-                if (gameField[1][5] != 1) {
                     gameField[1][5] = 2;
-                }
+                } else {gameOver = true;}
                 break;
             case FIGURE_TYPE_S:
-                if (gameField[1][3] != 1) {
+                if (gameField[1][3] != 1 &&
+                        gameField[1][4] != 1 &&
+                        gameField[0][4] != 1 &&
+                        gameField[0][5] != 1) {
                     gameField[1][3] = 2;
-                }
-                if (gameField[1][4] != 1) {
                     gameField[1][4] = 2;
-                }
-                if (gameField[0][4] != 1) {
                     gameField[0][4] = 2;
-                }
-                if (gameField[0][5] != 1) {
                     gameField[0][5] = 2;
-                }
+                } else {gameOver = true;}
                 break;
             case FIGURE_TYPE_T:
-                if (gameField[1][3] != 1) {
+                if (gameField[1][3] != 1 &&
+                        gameField[1][4] != 1 &&
+                        gameField[1][5] != 1 &&
+                        gameField[0][4] != 1) {
                     gameField[1][3] = 2;
-                }
-                if (gameField[1][4] != 1) {
                     gameField[1][4] = 2;
-                }
-                if (gameField[1][5] != 1) {
                     gameField[1][5] = 2;
-                }
-                if (gameField[0][4] != 1) {
                     gameField[0][4] = 2;
-                }
+                } else {gameOver = true;}
                 break;
             case FIGURE_TYPE_Z:
-                if (gameField[0][3] != 1) {
+                if (gameField[0][3] != 1 &&
+                        gameField[0][4] != 1 &&
+                        gameField[1][4] != 1 &&
+                        gameField[1][5] != 1) {
                     gameField[0][3] = 2;
-                }
-                if (gameField[0][4] != 1) {
                     gameField[0][4] = 2;
-                }
-                if (gameField[1][4] != 1) {
                     gameField[1][4] = 2;
-                }
-                if (gameField[1][5] != 1) {
                     gameField[1][5] = 2;
-                }
+                } else {gameOver = true;}
                 break;
         }
         return true;
@@ -254,6 +237,7 @@ public class GameProcess {
                 moveDownFigure();
             } else {
              freezeFigure();
+             figureFreezed = true;
              break;
             }
         }

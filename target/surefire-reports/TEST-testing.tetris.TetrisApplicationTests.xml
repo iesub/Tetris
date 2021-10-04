@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="testing.tetris.TetrisApplicationTests" time="0.017" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="testing.tetris.TetrisApplicationTests" time="0.027" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Users\Иван Субботин\.jdks\adopt-openjdk-14.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\FA3F~1\AppData\Local\Temp\surefire862056815691259701\surefirebooter3922593167903527899.jar C:\Users\Иван Субботин\AppData\Local\Temp\surefire862056815691259701 2021-10-04T13-09-25_299-jvmRun1 surefire6334660893421169738tmp surefire_01325936311795797688tmp"/>
+    <property name="sun.java.command" value="C:\Users\FA3F~1\AppData\Local\Temp\surefire16673050133617587847\surefirebooter2359046427142327935.jar C:\Users\Иван Субботин\AppData\Local\Temp\surefire16673050133617587847 2021-10-04T13-29-23_410-jvmRun1 surefire9035138439114284014tmp surefire_01957589143721801942tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="E:\МИРЭА\3 курс\5 семестр\Тестирование\Tetris\target\test-classes;E:\МИРЭА\3 курс\5 семестр\Тестирование\Tetris\target\classes;C:\Users\Иван Субботин\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\Иван Субботин\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\Иван Субботин\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\Иван Субботин\.m2\repository\org\junit\platform\junit-platform-commons\1.7.2\junit-platform-commons-1.7.2.jar;C:\Users\Иван Субботин\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\Иван Субботин\.m2\repository\org\junit\platform\junit-platform-engine\1.7.2\junit-platform-engine-1.7.2.jar;C:\Users\Иван Субботин\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;C:\Users\Иван Субботин\.m2\repository\org\projectlombok\lombok\1.18.20\lombok-1.18.20.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\FA3F~1\AppData\Local\Temp\surefire862056815691259701\surefirebooter3922593167903527899.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\FA3F~1\AppData\Local\Temp\surefire16673050133617587847\surefirebooter2359046427142327935.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="14.0.2+12"/>
@@ -57,9 +57,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="58.0"/>
   </properties>
-  <testcase name="deleteLinesCheck" classname="testing.tetris.TetrisApplicationTests" time="0.004"/>
-  <testcase name="checkFigureDropDown" classname="testing.tetris.TetrisApplicationTests" time="0.006"/>
-  <testcase name="checkLinesTest" classname="testing.tetris.TetrisApplicationTests" time="0"/>
+  <testcase name="deleteLinesCheck" classname="testing.tetris.TetrisApplicationTests" time="0.009"/>
+  <testcase name="checkFigureDropDown" classname="testing.tetris.TetrisApplicationTests" time="0.009"/>
+  <testcase name="checkLinesTest" classname="testing.tetris.TetrisApplicationTests" time="0.001"/>
   <testcase name="checkTurnFigure" classname="testing.tetris.TetrisApplicationTests" time="0"/>
   <testcase name="moveFiguresTest" classname="testing.tetris.TetrisApplicationTests" time="0"/>
 </testsuite>

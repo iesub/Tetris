@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Random;
@@ -41,11 +40,11 @@ public class TetrisApplication extends JFrame {
 		gameProcess.setNextFigureType(FigureType.values()[random.nextInt(7 - 1)]);
 
 		JFrame frame = new JFrame();
-		frame.setSize(800, 1000);
+		frame.setSize(500, 800);
 
-		JLabel score = new JLabel("<html><font color = 'white'>Счет: " + gameProcess.getScore() + "</font></html>", JLabel.CENTER);
-		JLabel nextFigure = new JLabel("", JLabel.CENTER);
-		JLabel gameField = new JLabel("", JLabel.CENTER);
+		JLabel score = new JLabel("<html><font color = 'white'>Счет: " + gameProcess.getScore() + "</font></html>");
+		JLabel nextFigure = new JLabel("");
+		JLabel gameField = new JLabel("");
 
 		JPanel topPanel = new JPanel();
 		topPanel.setBackground(Color.BLACK);
@@ -142,7 +141,7 @@ public class TetrisApplication extends JFrame {
 			gameProcess.deleteLines();
 			if (buildFigures == 2){
 				buildFigures = 0;
-				gameSpeed -= 2;
+				gameSpeed -= 5;
 			}
 			Thread.sleep(gameSpeed);
 		}
